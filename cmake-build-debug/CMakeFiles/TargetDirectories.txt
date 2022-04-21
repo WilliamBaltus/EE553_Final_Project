@@ -1,0 +1,6 @@
+C:/Users/wbalt/CLionProjects/Final_Project/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/wbalt/CLionProjects/Final_Project/cmake-build-debug/CMakeFiles/main_executable.dir
+C:/Users/wbalt/CLionProjects/Final_Project/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/wbalt/CLionProjects/Final_Project/cmake-build-debug/sqlite_dir/CMakeFiles/f_func.dir
+C:/Users/wbalt/CLionProjects/Final_Project/cmake-build-debug/sqlite_dir/CMakeFiles/edit_cache.dir
+C:/Users/wbalt/CLionProjects/Final_Project/cmake-build-debug/sqlite_dir/CMakeFiles/rebuild_cache.dir
