@@ -17,6 +17,19 @@ static int callback(void *data, int argc, char **argv, char **azColName){
     return 0;
 }
 
+void sqlite_insert(sqlite3* DB2, char* sql2, char* Err, int db_curr2){
+    /* Execute SQL statement */
+    db_curr2 = sqlite3_exec(DB2, sql2, callback, 0, &Err);
+
+    if( db_curr2 != SQLITE_OK ){
+        fprintf(stderr, "SQL error: %s\n", Err);
+        sqlite3_free(Err);
+    } else {
+        fprintf(stdout, "Records created successfully\n");
+    }
+}
+
+
 int main(int argc, char* argv[]) {
     sqlite3* DB;
     char *sql;
@@ -81,15 +94,16 @@ int main(int argc, char* argv[]) {
          "INSERT INTO STEVENS (ID,NAME,AGE,PROFESSION,SALARY)" \
          "VALUES (4, 'Alhussain', 25, 'Admin', 69000.00 );";
 
-    /* Execute SQL statement */
-    db_curr = sqlite3_exec(DB, sql, callback, 0, &zErrMsg);
-
-    if( db_curr != SQLITE_OK ){
-        fprintf(stderr, "SQL error: %s\n", zErrMsg);
-        sqlite3_free(zErrMsg);
-    } else {
-        fprintf(stdout, "Records created successfully\n");
-    }
+    sqlite_insert(DB, sql, zErrMsg, db_curr);
+//    /* Execute SQL statement */
+//    db_curr = sqlite3_exec(DB, sql, callback, 0, &zErrMsg);
+//
+//    if( db_curr != SQLITE_OK ){
+//        fprintf(stderr, "SQL error: %s\n", zErrMsg);
+//        sqlite3_free(zErrMsg);
+//    } else {
+//        fprintf(stdout, "Records created successfully\n");
+//    }
 
     /* Create SQL statement */
     sql = "SELECT * from STEVENS";
