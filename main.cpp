@@ -22,16 +22,28 @@ int main(int argc, char* argv[]) {
     char *sql;
     char *zErrMsg = 0;
     int db_curr = 0;
-    const char* data = "Print Function Called... ";
+    const char* data = "";
+
+
+    cout << "--------------------------------------------------" << endl;
+    cout << "Welcome to SQLite Database System! " << endl;
+    cout << "--------------------------------------------------" << endl;
+    cout << "Press 1 to continue.... " << endl;
+    cout << "Press 0 to exit.... " << endl;
+
+    int input;
+    cin >> input;
+    if(input == 0)
+        exit(1);
 
     db_curr =  sqlite3_open_v2("C:\\Users\\wbalt\\CLionProjects\\Final_Project\\university.db",
                                    &DB, SQLITE_OPEN_CREATE | SQLITE_OPEN_READWRITE, NULL);
     if( db_curr) {
-        cout << db_curr << endl;
+        //cout << db_curr << endl;
         fprintf(stderr, "Can't open database: %s\n", sqlite3_errmsg(DB));
         return(0);
     } else {
-        cout << db_curr << endl;
+        //cout << db_curr << endl;
         fprintf(stderr, "Opened database successfully\n");
     }
 
